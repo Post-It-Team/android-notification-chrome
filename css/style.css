@@ -11,6 +11,11 @@ nav .brand-logo {
   color: #444;
 }
 
+nav{
+  height: 72px !important;
+  line-height: 0px;
+}
+
 p {
   line-height: 2rem;
 }
@@ -59,7 +64,7 @@ footer.page-footer {
 /*HieuApp custom style*/
 body{
   width: 400px;
-  background-color: #607D8B;
+  background-color: #E0E0E0;
 }
 
 .card-image{
@@ -67,14 +72,11 @@ body{
   height: 72px;
 }
 
-
-
-.card .card-content{
-  padding: 10px;
-}
-
-.card-action{
-  padding: 10px !important;
+.content-padding{
+  padding-top : 10px !important;
+  padding-bottom:  10px !important;
+  padding-right:  5px !important;
+  padding-left:  5px !important;
 }
 
 .nav-wrapper{
@@ -95,8 +97,60 @@ body{
 
 .btn-clear-all{
   float: right;
+  cursor: pointer;
+}
+
+.btn-clear{
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
 .notification-item:hover{
   
 }
+
+.notification-item{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  cursor:pointer;
+}
+
+.col-padding{
+  padding: 0 !important;
+}
+
+.avatar{
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.battery{
+  height: 28px;
+}
+
+.model{
+  margin-top: 0px;
+}
+
+.devices-info{
+  display: flex;
+}
+
+.account{
+  float: right;
+}
+
+.font-14{
+  font-size: 14px;
+}
+
+.margin-top-10{
+  margin-top: 10px;
+}
+
+
+
+
