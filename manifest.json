@@ -11,11 +11,21 @@
   },
   "permissions": [
     "activeTab",
+    "notifications",
+    "background",
     "https://ajax.googleapis.com/"
   ],
 
-   "content_scripts": [{
-     "js": ["./js/firebase.js", "./js/firebaseIO.js", "./js/notification.js", "./js/jquery-3.1.1.min.js"],
-     "matches": ["http://*/*", "https://*/*", "https://*.firebase.com/*"]
-   }]
+  "content_scripts": [{
+   "js": ["./js/firebase.js","./js/index.js", "./js/firebaseIO.js", "./js/notification.js", "./js/jquery-3.1.1.min.js"],
+   "matches": ["http://*/*", "https://*/*"]
+  }],
+
+  "background": {
+    "page": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["./js/firebase.js", "./js/firebaseIO.js", "./js/notification.js", "./js/jquery-3.1.1.min.js"]
+  }
 }
