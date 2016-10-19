@@ -65,6 +65,7 @@ footer.page-footer {
 body{
   width: 400px;
   background-color: #E0E0E0;
+  min-height: 400px;
 }
 
 .card-image{

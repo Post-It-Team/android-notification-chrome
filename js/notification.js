@@ -15,12 +15,12 @@ var StackNotification = {
 		html +=					"</div>";
 		html +=				"</div>";
 		html +=				"<div class='btn-clear'>";
-		html +=					"<i class='material-icons clear-item'>clear</i>";
+		html +=					"<i class='material-icons clear-item' clearId='"+sbn.id+"'>clear</i>";
 		html +=				"</div>";
 		html +=			"</div>";
 		html +=		"</div>";
 
-		var notistack = $(".notistack").prepend(html);
+		var notistack = $("#notistack").prepend(html);
 	},
 
 	clearNotification: function(elementID){
@@ -35,7 +35,9 @@ var StackNotification = {
 
 	    notification.onclick = function () {
 	         
-	    };	
+	    };
+		
+		notification.cancel(); 
 	}
 
 }

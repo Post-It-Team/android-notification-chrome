@@ -18,3 +18,17 @@ ref.on("child_removed", function(snapshot) {
   StackNotification.clearNotification(id);
   console.log("has posts removed id = "+id);
 });
+
+$(document).ready(function() {
+  $(".btn-clear-all").on("click",function(){
+  	$("#notistack").empty();
+
+  });
+
+  $("#notistack").on("click",".clear-item",function(){
+  	var clearId = $(this).attr("clearId");
+  	StackNotification.clearNotification(clearId);
+  	ref.child(clearId).set(null);
+  	
+  });
+});

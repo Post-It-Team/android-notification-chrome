@@ -5,3 +5,8 @@ ref.on("child_added", function(snapshot, prevChildKey) {
   var newPost = snapshot.val();
   StackNotification.doNotify(newPost);
 });
+
+ref.on("child_changed", function(snapshot) {
+  var changedPost = snapshot.val();
+  StackNotification.doNotify(changedPost);
+});
