@@ -1,23 +1,23 @@
-var ref = new Firebase("https://androidstatus.firebaseio.com/notification");
+var database = firebase.database();
 
-ref.on("child_added", function(snapshot, prevChildKey) {
-  var newPost = snapshot.val();
-  StackNotification.appendNotificaion(newPost);
+var notificationsRef = database.ref("notification");
+
+notificationsRef.on('child_added', function(data) {
+  StackNotification.appendNotificaion(data.val());
 });
 
-ref.on("child_changed", function(snapshot) {
-  var changedPost = snapshot.val();
-  var id = changedPost.id;
+notificationsRef.on('child_changed', function(data) {
+  var id = data.val().id;
   StackNotification.clearNotification(id);
-  StackNotification.appendNotificaion(changedPost);
+  StackNotification.appendNotificaion(data.val());
 });
 
-ref.on("child_removed", function(snapshot) {
-  var deletedPost = snapshot.val();
-  var id = deletedPost.id;
+notificationsRef.on('child_removed', function(data) {
+  var id = data.val().id;
   StackNotification.clearNotification(id);
-  console.log("has posts removed id = "+id);
+  
 });
+
 
 $(document).ready(function() {
   $(".btn-clear-all").on("click",function(){
@@ -28,7 +28,7 @@ $(document).ready(function() {
   $("#notistack").on("click",".clear-item",function(){
   	var clearId = $(this).attr("clearId");
   	StackNotification.clearNotification(clearId);
-  	ref.child(clearId).set(null);
+  	notificationsRef.child(clearId).remove();
   	
   });
 });

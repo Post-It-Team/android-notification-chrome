@@ -3,7 +3,7 @@ var StackNotification = {
 		var html = "<div class='col s12 col-padding' id='"+sbn.id+"'>";
 		html += 		"<div class='card horizontal notification-item'>";
 		html +=				"<div class='card-image grey'>";
-		html += 				"<img class='icon' src='data:image/png;base64,"+sbn.image+"'>";
+		html += 				"<img class='icon' src='data:image/png;base64,"+sbn.icon+"'>";
 		html +=				"</div>";
 		html +=				"<div class='card-stacked'>";
 		html +=					"<div class='card-content content-padding'>";
@@ -29,7 +29,7 @@ var StackNotification = {
 
 	doNotify: function(sbn){
 		var notification = new Notification(sbn.notification.title, {
-	      icon: "data:image/png;base64,"+sbn.image,
+	      icon: "data:image/png;base64,"+sbn.icon,
 	      body: sbn.notification.text,
 	    });
 

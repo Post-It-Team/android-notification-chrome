@@ -16,16 +16,18 @@
     "https://ajax.googleapis.com/"
   ],
 
-  "content_scripts": [{
-   "js": ["./js/firebase.js","./js/index.js", "./js/firebaseIO.js", "./js/notification.js", "./js/jquery-3.1.1.min.js"],
-   "matches": ["http://*/*", "https://*/*"]
-  }],
-
   "background": {
     "page": "popup.html"
   },
 
   "background": {
-    "scripts": ["./js/firebase.js", "./js/firebaseIO.js", "./js/notification.js", "./js/jquery-3.1.1.min.js"]
-  }
+    "scripts": ["./js/lib/jquery-3.1.1.min.js", "./js/lib/firebase-3.5.2.js","./js/lib/firebase-app-3.5.2.js","./js/lib/firebase-auth-3.5.2.js","./js/lib/firebase-database-3.5.2.js", "./js/notification.js","./js/firebaseIO.js"]
+  },
+
+  "content_scripts": [{
+   "js": ["./js/index.js", "./js/firebaseIO.js", "./js/notification.js", "./js/lib/jquery-3.1.1.min.js", "./js/lib/firebase-3.5.2.js","./js/lib/firebase-app-3.5.2.js","./js/lib/firebase-auth-3.5.2.js","./js/lib/firebase-database-3.5.2.js"],
+   "matches": ["http://*/*"]
+  }],
+
+  "content_security_policy": "script-src 'self' 'sha256-jU63liZklfAhaCQPfMeZsGQ1cH4mR9W5Vwmn1azG5eU='; object-src 'self'"
 }

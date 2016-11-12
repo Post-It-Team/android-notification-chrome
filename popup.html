@@ -9,10 +9,23 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+  <script src="./js/lib/jquery-3.1.1.min.js"></script> 
 
-  <!-- <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script> -->
-  <script src="./js/firebase.js"></script>
-  <script src="./js/jquery-3.1.1.min.js"></script>  
+  <script src="./js/lib/firebase-3.5.2.js"></script>
+  <script src="./js/lib/firebase-app-3.5.2.js"></script>
+  <script src="./js/lib/firebase-auth-3.5.2.js"></script>
+  <script src="./js/lib/firebase-database-3.5.2.js"></script>
+  <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+      apiKey: "AIzaSyDkOZ9PL2YSi1CSJ6SHfxftLqijnGrPWjI",
+      authDomain: "androidstatus-f8065.firebaseapp.com",
+      databaseURL: "https://androidstatus-f8065.firebaseio.com"
+    };
+    firebase.initializeApp(config);
+  </script>
   
 </head>
 <body>
@@ -51,5 +64,6 @@
 
   <script src="./js/notification.js"></script>
   <script src="./js/index.js"></script>
+  
 </body>
 </html>
