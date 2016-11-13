@@ -12,8 +12,7 @@
   "permissions": [
     "activeTab",
     "notifications",
-    "background",
-    "https://ajax.googleapis.com/"
+    "background"
   ],
 
   "background": {
@@ -21,13 +20,13 @@
   },
 
   "background": {
-    "scripts": ["./js/lib/jquery-3.1.1.min.js", "./js/lib/firebase-3.5.2.js","./js/lib/firebase-app-3.5.2.js","./js/lib/firebase-auth-3.5.2.js","./js/lib/firebase-database-3.5.2.js", "./js/notification.js","./js/firebaseIO.js"]
+    "scripts": ["./js/lib/jquery-3.1.1.min.js", "./js/lib/firebase-3.5.2.js","./js/lib/firebase-app-3.5.2.js","./js/lib/firebase-auth-3.5.2.js","./js/lib/firebase-database-3.5.2.js", "./view/notification.js", "./model/database.js", "./controller/firebaseIO.service.js"]
   },
 
   "content_scripts": [{
-   "js": ["./js/index.js", "./js/firebaseIO.js", "./js/notification.js", "./js/lib/jquery-3.1.1.min.js", "./js/lib/firebase-3.5.2.js","./js/lib/firebase-app-3.5.2.js","./js/lib/firebase-auth-3.5.2.js","./js/lib/firebase-database-3.5.2.js"],
+   "js": ["./js/index.js", "./controller/firebaseIO.service.js", "./view/notification.js", "./js/lib/jquery-3.1.1.min.js", "./js/lib/firebase-3.5.2.js","./js/lib/firebase-app-3.5.2.js","./js/lib/firebase-auth-3.5.2.js","./js/lib/firebase-database-3.5.2.js"],
    "matches": ["http://*/*"]
   }],
 
-  "content_security_policy": "script-src 'self' 'sha256-jU63liZklfAhaCQPfMeZsGQ1cH4mR9W5Vwmn1azG5eU='; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'sha256-jU63liZklfAhaCQPfMeZsGQ1cH4mR9W5Vwmn1azG5eU='; unsafe-inline 'self' 'sha256-jU63liZklfAhaCQPfMeZsGQ1cH4mR9W5Vwmn1azG5eU='; object-src 'self'"
 }

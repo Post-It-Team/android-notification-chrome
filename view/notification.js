@@ -1,5 +1,10 @@
 var StackNotification = {
 	appendNotificaion: function(sbn){
+		var actions = sbn.notiActions;
+		if(actions){
+			actions = JSON.parse(actions);
+		}		
+
 		var html = "<div class='col s12 col-padding' id='"+sbn.id+"'>";
 		html += 		"<div class='card horizontal notification-item'>";
 		html +=				"<div class='card-image grey'>";
@@ -11,8 +16,15 @@ var StackNotification = {
 		html += 					"<p class='content-font'>"+sbn.notification.text+"</p>";
 		html += 				"</div>";
 		html +=					"<div class='card-action content-padding'>";
-		html += 					"<a href='#'>This is a link</a>";
+
+		for(index in actions){
+			
+			html += 					"<a href='#'><img class='action-icon' src='data:image/png;base64,"+actions[index].icon+"'>"+actions[index].title+"</a>";
+			
+		}
+
 		html +=					"</div>";
+
 		html +=				"</div>";
 		html +=				"<div class='btn-clear'>";
 		html +=					"<i class='material-icons clear-item' clearId='"+sbn.id+"'>clear</i>";
@@ -24,7 +36,10 @@ var StackNotification = {
 	},
 
 	clearNotification: function(elementID){
-		document.getElementById(elementID).remove();
+		var element = document.getElementById(elementID);
+		if(element){
+			$("#"+elementID).remove();
+		}
 	},
 
 	doNotify: function(sbn){
@@ -35,9 +50,6 @@ var StackNotification = {
 
 	    notification.onclick = function () {
 	         
-	    };
-		
-		notification.cancel(); 
-	}
-
+	    }; 
+	},
 }

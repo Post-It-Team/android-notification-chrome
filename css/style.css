@@ -11,6 +11,15 @@ nav .brand-logo {
   color: #444;
 }
 
+a {
+  color: #212121 !important;
+}
+
+.card-stacked a:hover{
+  color: #9E9E9E !important;
+}
+
+
 nav{
   height: 72px !important;
   line-height: 0px;
@@ -160,6 +169,11 @@ body{
   width: 60% !important;
   margin-top: 20%;
   margin-left: 20%;
+}
+
+.action-icon{
+  width: 10% !important;
+  margin-right: 12px;
 }
 
 
